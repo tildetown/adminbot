@@ -56,6 +56,10 @@ the admins.
 <wren> just to bug the admins i'm going to highlight them, watch
 <wren> !adminteam
 <adminbot> The town admins are vilmibm archangelic l0010o0001l equa
+<vilmibm> :(
+<archangelic> :(
+<l0010o0001l> :(
+<equa> :(
 ```
 
 ### !admins
@@ -64,9 +68,18 @@ This command sends a free-form message to town admins. It's relayed to their pri
 Use this when you don't have a specific action item for the admins but just want to leave them a note.
 Feel free to leave them a nice message.
 
+In `#tildetown`:
+
 ```
 <wren> !admins y'all are cute have a nice day :3
 <adminbot> I've sent your message to the admins.
+```
+
+In `#admins-private`
+
+```
+<adminbot> wren in #tildetown says "y'all are cure have a nice day :3"
+* vilmibm blushes
 ```
 
 ### !page
@@ -90,7 +103,7 @@ action.
 <wren> jillbob: you can open a ticket and ask for it to be installed with !ticket :)
 <jillbob> oh joy!
 <jillbob> !ticket install brainfuck package please
-<adminbot> Ticket created!
+<adminbot> Ticket #123 created!
 ```
 
 ### !psa
