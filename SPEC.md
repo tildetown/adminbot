@@ -100,12 +100,20 @@ an admin's day to day life and should only be used for server emergencies.
 This command opens up a help ticket. Use this command if you want an admin to take some specific
 action.
 
+In `#tildetown`:
+
 ```
 <jillbob> i really love brainfuck but it's not installed
 <wren> jillbob: you can open a ticket and ask for it to be installed with !ticket :)
 <jillbob> oh joy!
 <jillbob> !ticket install brainfuck package please
 <adminbot> Ticket #123 created!
+```
+
+In `#admins-private`:
+
+```
+<adminbot> Opened ticket #123 on behalf of jillbob: "install brainfuck package please"
 ```
 
 ### !psa
