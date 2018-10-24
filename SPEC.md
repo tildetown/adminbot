@@ -28,12 +28,20 @@ Reports its purpose and presence.
 
 ### !help
 
-Returns a listing of this bot's commands. Should probably only be used in a `/query`.
+Returns a listing of this bot's commands. Responds in a private message, and only if directed to
+adminbot itself.
+
+In `#tildetown`:
 
 ```
 <wren> i forget what adminbot does
 <wren> but i'll ask it privately so as not to spam
-<wren> /query adminbot !help
+<wren> adminbot: !help
+```
+
+In private message buffer:
+
+```
 <adminbot> !command0 helptext
 <adminbot> !command1 helptext
 <adminbot> !command2 helptext
@@ -41,17 +49,19 @@ Returns a listing of this bot's commands. Should probably only be used in a `/qu
 
 ### !adminteam
 
-This command lists out the current town admin roster. Please use **sparingly** as it will highlight
-the admins.
+This command lists out the current town admin roster. Responds in a PM.
+
+In `#tildetown`:
 
 ```
 <wren> just to bug the admins i'm going to highlight them, watch
 <wren> !adminteam
+```
+
+In private message buffer:
+
+```
 <adminbot> The town admins are vilmibm archangelic l0010o0001l equa
-<vilmibm> :(
-<archangelic> :(
-<l0010o0001l> :(
-<equa> :(
 ```
 
 ### !admins
