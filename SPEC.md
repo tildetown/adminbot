@@ -15,14 +15,6 @@ adminbot knows what users it has seen and which ones it hasn't. When an unrecogn
            page about this chat: https://tilde.town/wiki/socializing/irc
 ```
 
-### Admin PSAs
-
-Admins have use of the `!psa` command which has adminbot anonymously relay a command to `#tildetown`.
-
-```
-<adminbot> ***** PSA: The server is being restarted in T-2 hours. Out your crushes. Hug your plushies.
-```
-
 ## Commands
 
 ### !rollcall
