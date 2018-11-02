@@ -43,5 +43,5 @@ if __name__ == '__main__':
         'vilmibm',
         'archangelic'
     ]
-    bot = AdminBot(channels, adminbot, 'localhost', ops=ops)
+    bot = AdminBot(channels, 'adminbot', 'localhost', ops=ops)
     bot.start()
