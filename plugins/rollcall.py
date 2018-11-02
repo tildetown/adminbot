@@ -1,4 +1,4 @@
-import pinnhook.plugin as plugin
+import pinhook.plugin as plugin
 
 @plugin.register('!rollcall', help_text='Gives a short message about what this bot does')
 def rollcall(msg):
