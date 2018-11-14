@@ -30,6 +30,11 @@ class AdminBot(pinhook.bot.Bot):
             c.privmsg(nick, welcome)
             self._add_known_nick(nick)
 
+    def on_invite(self, c, e):
+        if e.arguments[0] in self.chanlist:
+            c.join(e.arguments[0])
+            self.logger.info('Joining {} at request of {}'.format(e.arguments[0], e.source))
+
     def call_help(self):
         # this is going to be handled by a listener plugin
         pass
