@@ -9,5 +9,5 @@ def adminteam(msg):
         'karlen',
         'equa'
     ]
-    msg.privmsg(msg.nick, 'The town admins are {}'.format(' '.join(adminteam).strip()))
+    msg.privmsg(msg.nick, 'The town admins are {}'.format(' '.join(admins).strip()))
     return None
