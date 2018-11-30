@@ -7,7 +7,6 @@ ADMINS = [
     'karlen',
     'equa'
 ]
-                                                    ]
 
 @p.register('!psa', help_text='Usable only by the town admins, this causes adminbot to anonymously relay a message to #tildetown.')
 def psa(msg):
