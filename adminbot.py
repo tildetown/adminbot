@@ -41,6 +41,8 @@ class AdminBot(pinhook.bot.Bot):
 
 
 if __name__ == '__main__':
+    with open('pw.secret') as p:
+        pw = p.read().strip()
     channels = [
         '#tildetown',
         '#admins',
@@ -50,5 +52,5 @@ if __name__ == '__main__':
         'vilmibm',
         'archangelic'
     ]
-    bot = AdminBot(channels, 'adminbot', 'localhost', ops=ops)
+    bot = AdminBot(channels, 'adminbot', 'localhost', ops=ops, ns_pass=pw)
     bot.start()
