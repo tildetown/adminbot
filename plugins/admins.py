@@ -7,6 +7,6 @@ help_text = ("This command sends a free-form message to town admins. "
 
 @p.register('!admins', help_text=help_text)
 def admins(msg):
-    output = '{} in {} says "{}"'.format(msg.nick, msg.channel, msg.text)
+    output = '{} in {} says "{}"'.format(msg.nick, msg.channel, msg.arg)
     msg.privmsg('#admins-private', output)
     return p.message('{}: your message has been sent to the admins!'.format(msg.nick))
