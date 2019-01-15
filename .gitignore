@@ -106,3 +106,4 @@ venv.bak/
 # adminbot specific
 known_nicks.json
 *.secret
+channels.json

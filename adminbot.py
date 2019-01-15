@@ -43,11 +43,8 @@ class AdminBot(pinhook.bot.Bot):
 if __name__ == '__main__':
     with open('pw.secret') as p:
         pw = p.read().strip()
-    channels = [
-        '#tildetown',
-        '#admins',
-        '#admins-private'
-    ]
+    with open('channels.json') as c:
+        channels = json.load(c)
     ops = [
         'vilmibm',
         'archangelic'
