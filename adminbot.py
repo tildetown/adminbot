@@ -1,9 +1,12 @@
 import json
+import re
 import os
 
 import pinhook.bot
 
 class AdminBot(pinhook.bot.Bot):
+    townie_re = re.compile('townie-[a-f0-9]{16}')
+
     def _add_known_nick(self, nick):
         nicks = self.known_nicks
         nicks.append(nick)
@@ -25,7 +28,7 @@ class AdminBot(pinhook.bot.Bot):
 
     def on_join(self, c, e):
         nick = e.source.nick
-        if nick not in self.known_nicks and e.target == '#tildetown':
+        if nick not in self.known_nicks and e.target == '#tildetown' and not self.townie_re.match(nick):
             welcome = "Welcome, {}! I hope you're well. If you haven't seen it yet, please read over our wiki page about this chat: https://tilde.town/wiki/socializing/irc".format(nick)
             c.privmsg(nick, welcome)
             self._add_known_nick(nick)
