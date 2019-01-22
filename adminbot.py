@@ -50,7 +50,9 @@ if __name__ == '__main__':
         channels = json.load(c)
     ops = [
         'vilmibm',
-        'archangelic'
+        'archangelic',
+        'equa',
+        'l0010o0001l'
     ]
     bot = AdminBot(channels, 'adminbot', 'localhost', ops=ops, ns_pass=pw)
     bot.start()
