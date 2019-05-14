@@ -107,3 +107,4 @@ venv.bak/
 known_nicks.json
 *.secret
 channels.json
+*.swp
