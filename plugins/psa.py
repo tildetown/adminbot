@@ -4,4 +4,5 @@ import pinhook.plugin as p
 def psa(msg):
     if msg.nick in msg.ops or msg.nick in msg.bot.modteam:
         msg.privmsg('#tildetown', '***** PSA: {}'.format(msg.arg))
+        msg.privmsg('#announcements', '***** PSA: {}'.format(msg.arg))
 
