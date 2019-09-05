@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash
 with open('users.json') as u:
     users = json.load(u)
 
-user = input(prompt='username> ')
+user = input('username> ')
 password = getpass.getpass(prompt='password> ')
 
 users[user] = generate_password_hash(password)
