@@ -12,7 +12,7 @@ bot = None
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 with open('users.json') as u:
-    USERS = json.load(u)
+    users = json.load(u)
 
 class AdminBot(pinhook.bot.Bot):
     townie_re = re.compile('townie-[a-f0-9]{16}')
@@ -65,8 +65,10 @@ def get_bot():
 
 @auth.verify_password
 def verify_password(username, password):
-    if username in USERS:
-        return check_password_hash(USERS.get(username), password)
+    with open('users.json') as u:
+        users = json.load(u)
+    if username in users:
+        return check_password_hash(users.get(username), password)
     return False
 
 @app.route('/notify', methods=['POST'])
