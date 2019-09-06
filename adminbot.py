@@ -8,6 +8,7 @@ from flask_httpauth import HTTPBasicAuth
 import pinhook.bot
 from werkzeug.security import check_password_hash
 
+bot = None
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 with open('users.json') as u:
@@ -56,32 +57,39 @@ class AdminBot(pinhook.bot.Bot):
         # this is going to be handled by a listener plugin
         pass
 
+def get_bot():
+    if bot:
+        return bot
+    else:
+        raise Exception("bot has not been intialized")
+
 @auth.verify_password
 def verify_password(username, password):
     if username in USERS:
         return check_password_hash(USERS.get(username), password)
     return False
 
-with open('pw.secret') as p:
-    pw = p.read().strip()
-with open('channels.json') as c:
-    channels = json.load(c)
-ops = [
-    'vilmibm',
-    'archangelic',
-    'equa',
-    'l0010o0001l'
-]
-bot = AdminBot(channels, 'adminbot', 'localhost', ops=ops, ns_pass=pw)
-
 @app.route('/notify', methods=['POST'])
 @auth.login_required
 def notify_admins():
+    bot_instance = get_bot()
     channel = request.json['channel']
     message = request.json['message']
-    bot.connection.privmsg(channel, message)
+    bot_instance.connection.privmsg(channel, message)
+    return 'message sent'
 
 if __name__ == '__main__':
+    with open('pw.secret') as p:
+        pw = p.read().strip()
+    with open('channels.json') as c:
+        channels = json.load(c)
+    ops = [
+        'vilmibm',
+        'archangelic',
+        'equa',
+        'l0010o0001l'
+    ]
+    bot = AdminBot(channels, 'adminbot', 'localhost', ops=ops, ns_pass=pw)
     bot_thread = threading.Thread(target=bot.start)
     bot_thread.start()
     flask_thread = threading.Thread(target=app.run)
