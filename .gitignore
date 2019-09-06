@@ -108,3 +108,5 @@ known_nicks.json
 *.secret
 channels.json
 *.swp
+.vscode
+users.json
