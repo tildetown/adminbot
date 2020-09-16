@@ -53,7 +53,7 @@ class AdminBot(pinhook.bot.Bot):
             c.join(e.arguments[0])
             self.logger.info('Joining {} at request of {}'.format(e.arguments[0], e.source))
 
-    def call_help(self, op):
+    def call_help(self, nick, op):
         # this is going to be handled by a listener plugin
         pass
 
