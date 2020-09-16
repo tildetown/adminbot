@@ -5,8 +5,8 @@ help_text = ("This command sends a free-form message to town admins. "
              "Use this when you don't have a specific action item for the admins but just want to "
              "leave them a note. Feel free to leave them a nice message.")
 
-@p.register('!admin', help_text='alias of !admins')
-@p.register('!admins', help_text=help_text)
+@p.command('!admin', help_text='alias of !admins')
+@p.command('!admins', help_text=help_text)
 def admins(msg):
     output = '{} in {} says "{}"'.format(msg.nick, msg.channel, msg.arg)
     msg.privmsg('#admins-private', output)
