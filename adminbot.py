@@ -18,7 +18,7 @@ class AdminBot(pinhook.bot.Bot):
     townie_re = re.compile('townie-[a-f0-9]{16}')
     modteam = [
         'aliasless',
-        'eigenellies',
+        'fluora',
         'spacecadet',
     ]
 
